@@ -156,20 +156,31 @@ curl -X DELETE http://localhost:8080/products/1
 product-api/
 ├── src/
 │   ├── main/
+│   │   ├── docker/
+│   │   │   ├── Dockerfile.jvm              # Build JVM
+│   │   │   ├── Dockerfile.native           # Build native
+│   │   │   ├── Dockerfile.native-micro     # Build native micro
+│   │   │   └── Dockerfile.legacy-jar       # Build legacy JAR
 │   │   ├── java/com/pdi/
 │   │   │   ├── entity/
-│   │   │   │   └── Product.java           # Entidade JPA
+│   │   │   │   └── Product.java            # Entidade JPA
 │   │   │   ├── repository/
 │   │   │   │   └── ProductRepository.java  # Repositório Panache
 │   │   │   └── resource/
-│   │   │       └── ProductResource.java    # Endpoints REST (CRUD completo)
+│   │   │       └── ProductResource.java    # Endpoints REST — CRUD completo
 │   │   └── resources/
 │   │       ├── application.properties      # Configurações da aplicação
 │   │       └── import.sql                  # Dados iniciais (dev/test)
 │   └── test/
 │       └── java/com/pdi/
-│           ├── GreetingResourceTest.java
-│           └── GreetingResourceIT.java
+│           ├── ProductResourceTest.java     # Testes CRUD com @QuarkusTest
+│           ├── GreetingResourceTest.java    # Placeholder para modo packaged
+│           └── GreetingResourceIT.java      # Testes de integração (@QuarkusIntegrationTest)
+├── .mvn/wrapper/
+│   └── maven-wrapper.properties
+├── .dockerignore
+├── .gitignore
+├── mvnw / mvnw.cmd                          # Maven wrapper
 └── pom.xml
 ```
 
