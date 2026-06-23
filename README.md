@@ -173,9 +173,7 @@ product-api/
 │   │       └── import.sql                  # Dados iniciais (dev/test)
 │   └── test/
 │       └── java/com/pdi/
-│           ├── ProductResourceTest.java     # Testes CRUD com @QuarkusTest
-│           ├── GreetingResourceTest.java    # Placeholder para modo packaged
-│           └── GreetingResourceIT.java      # Testes de integração (@QuarkusIntegrationTest)
+│           └── ProductResourceTest.java     # Testes CRUD com @QuarkusTest (11 casos)
 ├── .mvn/wrapper/
 │   └── maven-wrapper.properties
 ├── .dockerignore
